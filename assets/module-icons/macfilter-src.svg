@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#000000"/>
+  <!-- Shield shape -->
+  <path d="M64,12 L104,28 L104,68 Q104,98 64,118 Q24,98 24,68 L24,28 Z"
+        fill="#ffffff"/>
+  <!-- Shield cutout (inner) -->
+  <path d="M64,22 L96,36 L96,68 Q96,92 64,108 Q32,92 32,68 L32,36 Z"
+        fill="#000000"/>
+  <!-- Checkmark inside shield -->
+  <polyline points="42,66 56,82 86,50"
+            stroke="#ffffff" stroke-width="11" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

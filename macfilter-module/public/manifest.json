@@ -1,0 +1,29 @@
+{
+  "title": "MAC Allow-List",
+  "name": "macfilter",
+  "description": "View, add, and remove MAC addresses on Aura's shared allow-list used by deauth and MITM automation",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "network",
+    "aura",
+    "filter",
+    "allow-list"
+  ],
+  "repository": "https://github.com/xchwarze/frieren-modules/tree/master/macfilter",
+  "documentation": "https://github.com/xchwarze/frieren-modules/tree/master/macfilter#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}

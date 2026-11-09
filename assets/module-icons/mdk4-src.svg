@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#000000"/>
+  <!-- WiFi arcs - outer -->
+  <path d="M14,70 Q64,8 114,70"
+        stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <!-- WiFi arcs - middle -->
+  <path d="M28,80 Q64,34 100,80"
+        stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <!-- WiFi arcs - inner -->
+  <path d="M44,90 Q64,62 84,90"
+        stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="64" cy="104" r="8" fill="#ffffff"/>
+  <!-- Large lightning bolt cutout centered in wifi symbol -->
+  <polygon points="72,42 54,80 68,80 50,116 90,68 72,68 88,42" fill="#000000"/>
+</svg>

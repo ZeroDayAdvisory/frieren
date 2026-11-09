@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#000000"/>
+
+  <!-- Left wing: starts narrow at bottom, flares dramatically outward at top-left -->
+  <path d="
+    M62,114
+    Q46,110 36,98
+    Q22,82  18,64
+    Q14,46  20,32
+    Q26,18  38,14
+    Q50,10  58,20
+    Q50,32  50,50
+    Q48,70  52,88
+    Q56,104 62,110 Z"
+  fill="#ffffff"/>
+
+  <!-- Right wing: mirror of left -->
+  <path d="
+    M66,114
+    Q82,110 92,98
+    Q106,82 110,64
+    Q114,46 108,32
+    Q102,18  90,14
+    Q78,10  70,20
+    Q78,32  78,50
+    Q80,70  76,88
+    Q72,104 66,110 Z"
+  fill="#ffffff"/>
+
+  <!-- Bottom connector between wings -->
+  <ellipse cx="64" cy="112" rx="6" ry="4" fill="#ffffff"/>
+
+  <!-- Top arch cutout between wings (the gap showing black background) -->
+  <!-- This is the negative space between the two wing tops -->
+
+  <!-- Inner central elongated diamond cutout -->
+  <path d="
+    M50,50
+    Q56,38 64,36
+    Q72,38 78,50
+    Q76,68 74,84
+    Q70,100 64,108
+    Q58,100 54,84
+    Q52,68 50,50 Z"
+  fill="#000000"/>
+</svg>

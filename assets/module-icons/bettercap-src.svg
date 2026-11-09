@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#000000"/>
+
+  <!-- Ears (round bumps poking above hat) -->
+  <circle cx="36" cy="30" r="13" fill="#ffffff"/>
+  <circle cx="92" cy="30" r="13" fill="#ffffff"/>
+  <!-- Ear inner (dark = pink cutout) -->
+  <circle cx="36" cy="30" r="6" fill="#000000"/>
+  <circle cx="92" cy="30" r="6" fill="#000000"/>
+
+  <!-- Ninja hood/hat - white rounded rectangle covering top of head -->
+  <rect x="20" y="30" width="88" height="36" rx="8" fill="#ffffff"/>
+  <!-- Hat top rounded dome -->
+  <ellipse cx="64" cy="30" rx="44" ry="16" fill="#ffffff"/>
+
+  <!-- Face (main head oval - white) -->
+  <ellipse cx="64" cy="82" rx="42" ry="38" fill="#ffffff"/>
+
+  <!-- Hat brim line (dark band between hat and face) -->
+  <rect x="20" y="60" width="88" height="10" rx="0" fill="#000000"/>
+  <!-- Round off brim corners -->
+  <rect x="20" y="60" width="8" height="10" fill="#ffffff"/>
+  <rect x="100" y="60" width="8" height="10" fill="#ffffff"/>
+
+  <!-- Eyes - large and round (punched out dark = pink) -->
+  <circle cx="47" cy="80" r="13" fill="#000000"/>
+  <circle cx="81" cy="80" r="13" fill="#000000"/>
+  <!-- Eye shine highlights (white = white) -->
+  <circle cx="51" cy="75" r="4" fill="#ffffff"/>
+  <circle cx="85" cy="75" r="4" fill="#ffffff"/>
+
+  <!-- Snout / muzzle bump -->
+  <ellipse cx="64" cy="100" rx="14" ry="10" fill="#000000" opacity="0.0"/>
+
+  <!-- Nose (small dark dot) -->
+  <ellipse cx="64" cy="96" rx="5" ry="4" fill="#000000"/>
+
+  <!-- Whisker lines each side -->
+  <line x1="30" y1="94" x2="50" y2="98" stroke="#000000" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="30" y1="100" x2="50" y2="100" stroke="#000000" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="78" y1="98" x2="98" y2="94" stroke="#000000" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="78" y1="100" x2="98" y2="100" stroke="#000000" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Kanji character on hat (白 = white, stylized) -->
+  <text x="64" y="52" font-family="serif" font-size="20" font-weight="bold"
+        fill="#000000" text-anchor="middle" dominant-baseline="middle">忍</text>
+</svg>
