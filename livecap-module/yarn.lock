@@ -3184,6 +3184,60 @@ __metadata:
   languageName: node
   linkType: hard
 
+"livecap@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "livecap@workspace:."
+  dependencies:
+    "@eslint/js": "npm:^9.39.4"
+    "@hookform/resolvers": "npm:^5.2.2"
+    "@inquirer/prompts": "npm:^8.4.2"
+    "@tanstack/eslint-plugin-query": "npm:^5.100.9"
+    "@tanstack/react-query": "npm:^5.100.9"
+    "@testing-library/dom": "npm:^10.4.1"
+    "@testing-library/jest-dom": "npm:^7.0.0"
+    "@testing-library/react": "npm:^16.3.2"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@vitejs/plugin-react": "npm:^4.7.0"
+    bootstrap: "npm:^5.3.8"
+    chalk: "npm:^5.6.2"
+    commander: "npm:^14.0.3"
+    eslint: "npm:^9.39.4"
+    eslint-plugin-node: "npm:^11.1.0"
+    eslint-plugin-react-hooks: "npm:^5.2.0"
+    eslint-plugin-react-refresh: "npm:^0.4.26"
+    fs-extra: "npm:^11.3.5"
+    globals: "npm:^17.6.0"
+    jotai: "npm:^2.20.0"
+    jsdom: "npm:^29.1.1"
+    prop-types: "npm:^15.8.1"
+    react: "npm:^18.3.1"
+    react-bootstrap: "npm:^2.10.10"
+    react-dom: "npm:^18.3.1"
+    react-hook-form: "npm:^7.75.0"
+    react-toastify: "npm:^11.1.0"
+    semver: "npm:^7.7.3"
+    vite: "npm:^7.3.3"
+    vite-bundle-analyzer: "npm:^1.3.8"
+    vite-plugin-compression2: "npm:^2.5.3"
+    vitest: "npm:^4.1.10"
+    wouter: "npm:^3.9.0"
+    yup: "npm:^1.7.1"
+  peerDependencies:
+    "@hookform/resolvers": ^5.2.2
+    "@tanstack/react-query": ^5.100.9
+    bootstrap: ^5.3.8
+    jotai: ^2.20.0
+    prop-types: ^15.8.1
+    react: ^18.3.1
+    react-bootstrap: ^2.10.10
+    react-dom: ^18.3.1
+    react-hook-form: ^7.75.0
+    react-toastify: ^11.1.0
+    wouter: ^3.9.0
+    yup: ^1.7.1
+  languageName: unknown
+  linkType: soft
+
 "locate-path@npm:^6.0.0":
   version: 6.0.0
   resolution: "locate-path@npm:6.0.0"
@@ -3235,60 +3289,6 @@ __metadata:
   checksum: 10c0/36128e4de34791838abe979b19927c26e67201ca5acf00880377af7d765b38d1c60847e01c5ec61b1a260c48029084ab3893a3925fd6e48a04011364b089991b
   languageName: node
   linkType: hard
-
-"macfilter@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "macfilter@workspace:."
-  dependencies:
-    "@eslint/js": "npm:^9.39.4"
-    "@hookform/resolvers": "npm:^5.2.2"
-    "@inquirer/prompts": "npm:^8.4.2"
-    "@tanstack/eslint-plugin-query": "npm:^5.100.9"
-    "@tanstack/react-query": "npm:^5.100.9"
-    "@testing-library/dom": "npm:^10.4.1"
-    "@testing-library/jest-dom": "npm:^7.0.0"
-    "@testing-library/react": "npm:^16.3.2"
-    "@testing-library/user-event": "npm:^14.6.1"
-    "@vitejs/plugin-react": "npm:^4.7.0"
-    bootstrap: "npm:^5.3.8"
-    chalk: "npm:^5.6.2"
-    commander: "npm:^14.0.3"
-    eslint: "npm:^9.39.4"
-    eslint-plugin-node: "npm:^11.1.0"
-    eslint-plugin-react-hooks: "npm:^5.2.0"
-    eslint-plugin-react-refresh: "npm:^0.4.26"
-    fs-extra: "npm:^11.3.5"
-    globals: "npm:^17.6.0"
-    jotai: "npm:^2.20.0"
-    jsdom: "npm:^29.1.1"
-    prop-types: "npm:^15.8.1"
-    react: "npm:^18.3.1"
-    react-bootstrap: "npm:^2.10.10"
-    react-dom: "npm:^18.3.1"
-    react-hook-form: "npm:^7.75.0"
-    react-toastify: "npm:^11.1.0"
-    semver: "npm:^7.7.3"
-    vite: "npm:^7.3.3"
-    vite-bundle-analyzer: "npm:^1.3.8"
-    vite-plugin-compression2: "npm:^2.5.3"
-    vitest: "npm:^4.1.10"
-    wouter: "npm:^3.9.0"
-    yup: "npm:^1.7.1"
-  peerDependencies:
-    "@hookform/resolvers": ^5.2.2
-    "@tanstack/react-query": ^5.100.9
-    bootstrap: ^5.3.8
-    jotai: ^2.20.0
-    prop-types: ^15.8.1
-    react: ^18.3.1
-    react-bootstrap: ^2.10.10
-    react-dom: ^18.3.1
-    react-hook-form: ^7.75.0
-    react-toastify: ^11.1.0
-    wouter: ^3.9.0
-    yup: ^1.7.1
-  languageName: unknown
-  linkType: soft
 
 "magic-string@npm:^0.30.21":
   version: 0.30.21
