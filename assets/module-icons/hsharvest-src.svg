@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="black"/>
+  <!-- Key bow (circle) -->
+  <circle cx="42" cy="50" r="22" fill="none" stroke="white" stroke-width="11"/>
+  <!-- Key shaft -->
+  <line x1="58" y1="62" x2="106" y2="106" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <!-- Key teeth -->
+  <line x1="94" y1="94" x2="82" y2="94" stroke="white" stroke-width="9" stroke-linecap="round"/>
+  <line x1="82" y1="82" x2="70" y2="82" stroke="white" stroke-width="9" stroke-linecap="round"/>
+  <!-- WiFi arc (top of key) suggesting wireless -->
+  <path d="M 20 30 A 36 36 0 0 1 64 30" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+</svg>

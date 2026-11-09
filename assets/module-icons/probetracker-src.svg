@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="black"/>
+  <!-- Radar arcs (concentric, bottom-centered) -->
+  <path d="M 20 108 A 60 60 0 0 1 108 108" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 34 108 A 46 46 0 0 1 94 108" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 48 108 A 32 32 0 0 1 80 108" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="64" cy="108" r="7" fill="white"/>
+  <!-- Sweep line (pointing upper-left) -->
+  <line x1="64" y1="108" x2="26" y2="52" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+  <!-- Target dot at sweep tip -->
+  <circle cx="26" cy="52" r="5" fill="white"/>
+</svg>
