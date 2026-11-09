@@ -6,6 +6,7 @@
 import PanelStack from '@src/components/PanelCard/PanelStack';
 import AddMacCard from '@module/feature/components/AddMacCard';
 import AllowListCard from '@module/feature/components/AllowListCard';
+import MitmToggleCard from '@module/feature/components/MitmToggleCard';
 import ReconResultsCard from '@module/feature/components/ReconResultsCard';
 
 /**
@@ -23,6 +24,7 @@ const MacFilterPage = () => (
         </p>
 
         <PanelStack>
+            <MitmToggleCard />
             <AddMacCard />
             <AllowListCard />
             <ReconResultsCard />

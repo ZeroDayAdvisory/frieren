@@ -16,6 +16,8 @@ class MacfilterController extends \frieren\core\Controller
         'addMac' => true,
         'removeMac' => true,
         'getReconResults' => true,
+        'getMitmState' => true,
+        'setMitmState' => true,
     ];
 
     public function getList()
@@ -61,6 +63,22 @@ class MacfilterController extends \frieren\core\Controller
 
         return self::setSuccess([
             'entries' => self::setupModuleHelper()::getAllowListEntries(),
+        ]);
+    }
+
+    public function getMitmState()
+    {
+        return self::setSuccess([
+            'active' => self::setupModuleHelper()::getMitmActive(),
+        ]);
+    }
+
+    public function setMitmState()
+    {
+        $active = !empty($this->request['active']);
+        self::setupModuleHelper()::setMitmActive($active);
+        return self::setSuccess([
+            'active' => self::setupModuleHelper()::getMitmActive(),
         ]);
     }
 }

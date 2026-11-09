@@ -17,6 +17,7 @@ class ModuleOpenWrtHelper
     private const CLI = 'frieren-aura-cli';
     private const OUI_DB = '/usr/share/frieren/modules/kismet/conf/kismet_manuf.txt.gz';
     private const DHCP_LEASE_FILES = ['/tmp/dhcp_evil.leases', '/tmp/dhcp.leases'];
+    private const MITM_FLAG = '/mnt/usb/frieren/aura/hooks.d/.mitm-active';
 
     /**
      * Reads the current filter_list output and returns each MAC entry
@@ -187,6 +188,20 @@ class ModuleOpenWrtHelper
         }
 
         return $clients;
+    }
+
+    public static function getMitmActive(): bool
+    {
+        return file_exists(self::MITM_FLAG);
+    }
+
+    public static function setMitmActive(bool $active): void
+    {
+        if ($active) {
+            file_put_contents(self::MITM_FLAG, '1');
+        } elseif (file_exists(self::MITM_FLAG)) {
+            unlink(self::MITM_FLAG);
+        }
     }
 
     /**
