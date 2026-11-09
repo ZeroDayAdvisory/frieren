@@ -1,0 +1,33 @@
+{
+  "title": "Live Capture",
+  "name": "livecap",
+  "description": "Real-time packet feed from monitor radios — filter by frame type (deauth, probe, EAPOL, beacon, data) with per-packet BSSID and vendor enrichment",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "network",
+    "tshark",
+    "wireshark",
+    "capture",
+    "live",
+    "packets",
+    "deauth",
+    "eapol"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/livecap-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/livecap-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}

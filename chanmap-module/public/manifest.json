@@ -1,0 +1,31 @@
+{
+  "title": "Channel Map",
+  "name": "chanmap",
+  "description": "Live 2.4 GHz and 5 GHz channel utilization heatmap — AP density, signal strength distribution, and airtime data from the monitor radios",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "network",
+    "channel",
+    "heatmap",
+    "spectrum",
+    "rf",
+    "recon"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/chanmap-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/chanmap-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}

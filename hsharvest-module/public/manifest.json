@@ -1,0 +1,31 @@
+{
+  "title": "Handshake Harvester",
+  "name": "hsharvest",
+  "description": "Scan capture files for WPA handshakes and PMKID hashes — ready-to-run hashcat commands, one click away",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "network",
+    "handshake",
+    "wpa",
+    "pmkid",
+    "hashcat",
+    "capture"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/hsharvest-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/hsharvest-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}

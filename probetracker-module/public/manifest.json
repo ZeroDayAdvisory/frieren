@@ -1,0 +1,30 @@
+{
+  "title": "Probe Tracker",
+  "name": "probetracker",
+  "description": "Live feed of devices broadcasting probe requests — the SSIDs they're hunting, vendor-enriched, correlated against the allow-list",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "network",
+    "probe",
+    "recon",
+    "wifi",
+    "device-tracking"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/probetracker-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/probetracker-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}
