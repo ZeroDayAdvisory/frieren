@@ -1,7 +1,13 @@
+/*
+ * Project: Frieren Framework
+ * Module: Channel Map (ZeroDay Advisory)
+ * SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+ */
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import ChannelHeatmapCard from '@module/feature/components/ChannelHeatmapCard';
+import ChannelHeatmapCardFull from '@module/feature/components/ChannelHeatmapCard';
 import ChannelStatsCard from '@module/feature/components/ChannelStatsCard';
+import DeauthStatsCard from '@module/feature/components/DeauthStatsCard';
 import useChannelDataQuery from '@module/feature/hooks/useChannelDataQuery';
 
 const ChanMapPage = () => {
@@ -12,13 +18,13 @@ const ChanMapPage = () => {
         <div className={'my-5'}>
             <h1 className={'mb-3 text-center'}>Channel Map</h1>
             <p className={'mb-4 text-center text-muted'}>
-                Live 2.4 GHz and 5 GHz channel utilization — AP density, signal strength,
-                and airtime busy percentage from the monitor radios.
+                2.4 GHz and 5 GHz channel utilization — AP density, signal strength, airtime busy%,
+                and live management frame activity from the monitor radios.
             </p>
 
             <Row className={'g-4'}>
-                <Col md={8}>
-                    <ChannelHeatmapCard
+                <Col lg={8}>
+                    <ChannelHeatmapCardFull
                         bands={data?.bands}
                         scanId={data?.scanId}
                         isFetching={isLoading || isRefetching}
@@ -27,11 +33,14 @@ const ChanMapPage = () => {
                         selectedChannel={selectedChannel}
                     />
                 </Col>
-                <Col md={4}>
-                    <ChannelStatsCard
-                        bands={data?.bands}
-                        selectedChannel={selectedChannel}
-                    />
+                <Col lg={4}>
+                    <div className={'d-flex flex-column gap-4'}>
+                        <ChannelStatsCard
+                            bands={data?.bands}
+                            selectedChannel={selectedChannel}
+                        />
+                        <DeauthStatsCard />
+                    </div>
                 </Col>
             </Row>
         </div>

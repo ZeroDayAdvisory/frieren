@@ -1,0 +1,30 @@
+{
+  "title": "System Health",
+  "name": "syshealth",
+  "description": "At-a-glance health for the rig — internal and USB disk usage, SoC temperature, memory, load, uptime, and whether the key daemons (bettercap, hostapd, nginx, php-fpm) are running",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "health",
+    "disk",
+    "temperature",
+    "status",
+    "monitoring"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/syshealth-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/syshealth-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}

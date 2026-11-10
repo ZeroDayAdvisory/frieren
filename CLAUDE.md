@@ -113,7 +113,7 @@ Closed-source paid WiFi recon/offense daemon. Data lives in `/mnt/usb/frieren/au
 
 ### Honeypot AP
 
-SSID: **<honeypot-ssid>** · BSSID: `AA:BB:CC:DD:EE:FF` · Network: `10.13.37.0/24` · Bridge: `br-evil`
+SSID: **`<honeypot-ssid>`** · BSSID: `AA:BB:CC:DD:EE:FF` · Network: `10.13.37.0/24` · Bridge: `br-evil`
 
 MITM watcher hook: `/mnt/usb/frieren/aura/hooks.d/honeypot-mitm-watch.php`  
 Runs every 30 s via two crontab entries. Checks all currently-connected allow-listed devices for a live Bettercap process and self-heals crashed sessions. Bettercap + tcpdump recordings go to `/mnt/usb/frieren/aura/captures/`.

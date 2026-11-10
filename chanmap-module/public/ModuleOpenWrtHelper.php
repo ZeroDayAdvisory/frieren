@@ -18,7 +18,8 @@ class ModuleOpenWrtHelper
     private const RECON_DB = '/mnt/usb/frieren/aura/recon.db';
 
     // Monitor interfaces that carry airtime survey data
-    private const SURVEY_IFACES = ['wlan0', 'wlan1'];
+    private const SURVEY_IFACES  = ['wlan0', 'wlan1'];
+    private const MONITOR_IFACES = ['wlan0', 'wlan1'];
 
     // 2.4 GHz channels 1–14, 5 GHz common channels
     private const CHANNELS_24  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
@@ -60,6 +61,43 @@ class ModuleOpenWrtHelper
         }
 
         return ['scanId' => $scanId, 'bands' => $bands];
+    }
+
+    /**
+     * Runs a 3-second passive tcpdump sweep on each monitor interface and
+     * returns management frame counts (deauth, disassoc, probe request) so
+     * the frontend can overlay frame activity on the channel chart.
+     *
+     * @return array{interfaces: array<string, array{deauth: int, disassoc: int, probe: int}>, scannedAt: string}
+     */
+    public static function getDeauthSnapshot()
+    {
+        $results = [];
+
+        foreach (self::MONITOR_IFACES as $iface) {
+            // Check the interface exists before wasting 3 s
+            $check = trim((string)shell_exec('ip link show ' . escapeshellarg($iface) . ' 2>/dev/null'));
+            if ($check === '') {
+                continue;
+            }
+
+            $raw = (string)shell_exec(
+                'timeout 3 tcpdump -i ' . escapeshellarg($iface) .
+                ' -v --immediate-mode -c 1000 "type mgt" 2>/dev/null'
+            );
+
+            if ($raw === '') {
+                continue;
+            }
+
+            $results[$iface] = [
+                'deauth'  => substr_count($raw, 'Deauthentication'),
+                'disassoc' => substr_count($raw, 'Disassociation'),
+                'probe'   => substr_count($raw, 'Probe Request'),
+            ];
+        }
+
+        return ['interfaces' => $results, 'scannedAt' => date('c')];
     }
 
     // -------------------------------------------------------------------------

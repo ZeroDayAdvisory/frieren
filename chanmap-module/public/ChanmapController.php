@@ -10,11 +10,17 @@ namespace frieren\modules\chanmap;
 class ChanmapController extends \frieren\core\Controller
 {
     public $endpointRoutes = [
-        'getChannelData' => true,
+        'getChannelData'    => true,
+        'getDeauthSnapshot' => true,
     ];
 
     public function getChannelData()
     {
         return self::setSuccess(self::setupModuleHelper()::getChannelData());
+    }
+
+    public function getDeauthSnapshot()
+    {
+        return self::setSuccess(self::setupModuleHelper()::getDeauthSnapshot());
     }
 }

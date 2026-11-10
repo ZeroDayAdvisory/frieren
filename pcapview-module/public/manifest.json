@@ -1,0 +1,30 @@
+{
+  "title": "PCAP Analysis",
+  "name": "pcapview",
+  "description": "Run tcpdump BPF filters and packet decoding (summary, verbose, ASCII, hex) against the saved honeypot captures — on-device analysis without needing Wireshark on your computer",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "pcap",
+    "tcpdump",
+    "analysis",
+    "packets",
+    "filter"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/pcapview-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/pcapview-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}

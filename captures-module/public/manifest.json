@@ -1,0 +1,30 @@
+{
+  "title": "Captures",
+  "name": "captures",
+  "description": "Browse per-device honeypot packet captures on the USB drive and see which devices are connected to the honeypot AP right now, with allow-list status and vendor enrichment",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "capture",
+    "pcap",
+    "honeypot",
+    "clients",
+    "recon"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/captures-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/captures-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.3"
+}
