@@ -48,6 +48,7 @@ class ModuleOpenWrtHelper
     private const DEFAULT_THEME = [
         'mode'      => 'dark',
         'iconStyle' => 'colored',
+        'iconColor' => '#ff2d78',
         'colors'    => [
             'bodyBg'      => '#0b0f14',
             'bodyColor'   => '#ff2d78',
@@ -85,7 +86,7 @@ class ModuleOpenWrtHelper
         $theme = self::normalize($raw);
         self::uciSet($theme);
         self::writeCss($theme);
-        self::applyIconStyle($theme['iconStyle']);
+        self::applyIconStyle($theme['iconStyle'], $theme['iconColor']);
         return $theme;
     }
 
@@ -93,7 +94,7 @@ class ModuleOpenWrtHelper
     {
         self::uciDelete();
         self::writeCss(self::DEFAULT_THEME);
-        self::applyIconStyle(self::DEFAULT_THEME['iconStyle']);
+        self::applyIconStyle(self::DEFAULT_THEME['iconStyle'], self::DEFAULT_THEME['iconColor']);
         return self::DEFAULT_THEME;
     }
 
@@ -162,6 +163,9 @@ class ModuleOpenWrtHelper
         if (isset($raw['iconStyle']) && in_array($raw['iconStyle'], self::ICON_STYLES, true)) {
             $theme['iconStyle'] = $raw['iconStyle'];
         }
+        if (self::isHex($raw['iconColor'] ?? null)) {
+            $theme['iconColor'] = strtolower(trim($raw['iconColor']));
+        }
 
         $colors = is_array($raw['colors'] ?? null) ? $raw['colors'] : [];
         foreach (self::TOKEN_KEYS as $key) {
@@ -213,16 +217,34 @@ class ModuleOpenWrtHelper
     }
 
     /**
-     * Copies icon-<style>.png over icon.png for every module that ships
-     * icon style variants. Sidebar icons are plain <img src="/modules/
-     * <name>/icon.png"> so overwriting in place is the only way to switch
-     * them without a core frontend change.
+     * Switches every custom module's sidebar icon. "dark"/"light" copy a
+     * pre-rendered static variant over icon.png. "colored" recolors the
+     * dark variant (a clean black-chip/white-glyph source) at runtime with
+     * GD, using its luminance as a mask: black -> $color, white -> white,
+     * everything between interpolated — the same math the build-time
+     * ImageMagick clut pipeline used, just with an arbitrary target color
+     * instead of the fixed brand pink. Sidebar icons are plain
+     * <img src="/modules/<name>/icon.png"> so overwriting in place is the
+     * only way to switch them without a core frontend change.
      */
-    private static function applyIconStyle($style)
+    private static function applyIconStyle($style, $color = null)
     {
         if (!in_array($style, self::ICON_STYLES, true)) {
             return;
         }
+
+        if ($style === 'colored' && function_exists('imagecreatefrompng')) {
+            $hex = self::isHex($color) ? $color : '#ff2d78';
+            foreach (self::ICON_MODULES as $mod) {
+                $template = self::MODULES_DIR . "/{$mod}/icon-dark.png";
+                $target   = self::MODULES_DIR . "/{$mod}/icon.png";
+                if (is_file($template)) {
+                    self::recolorIcon($template, $target, $hex);
+                }
+            }
+            return;
+        }
+
         foreach (self::ICON_MODULES as $mod) {
             $variant = self::MODULES_DIR . "/{$mod}/icon-{$style}.png";
             $target  = self::MODULES_DIR . "/{$mod}/icon.png";
@@ -230,6 +252,41 @@ class ModuleOpenWrtHelper
                 @copy($variant, $target);
             }
         }
+    }
+
+    private static function recolorIcon($srcPath, $destPath, $hex)
+    {
+        $src = @imagecreatefrompng($srcPath);
+        if ($src === false) {
+            return;
+        }
+
+        [$tr, $tg, $tb] = sscanf($hex, '#%02x%02x%02x');
+
+        $w  = imagesx($src);
+        $h  = imagesy($src);
+        $out = imagecreatetruecolor($w, $h);
+
+        for ($y = 0; $y < $h; $y++) {
+            for ($x = 0; $x < $w; $x++) {
+                $rgb = imagecolorat($src, $x, $y);
+                $r = ($rgb >> 16) & 0xFF;
+                $g = ($rgb >> 8) & 0xFF;
+                $b = $rgb & 0xFF;
+                // Source is grayscale (black chip / white glyph); luminance
+                // doubles as the mix weight between the target color and white.
+                $t  = (($r + $g + $b) / 3) / 255;
+                $nr = (int)round($tr + (255 - $tr) * $t);
+                $ng = (int)round($tg + (255 - $tg) * $t);
+                $nb = (int)round($tb + (255 - $tb) * $t);
+                $color = imagecolorallocate($out, min(255, $nr), min(255, $ng), min(255, $nb));
+                imagesetpixel($out, $x, $y, $color);
+            }
+        }
+
+        imagepng($out, $destPath);
+        imagedestroy($src);
+        imagedestroy($out);
     }
 
     /**

@@ -47,12 +47,13 @@ export const MODES = [
 ];
 
 /**
- * Sidebar/module icon palette. Each custom module ships 3 pre-rendered
- * variants (icon-dark.png / icon-light.png / icon-colored.png); switching
- * this just copies the chosen variant over icon.png server-side.
+ * Sidebar/module icon palette. "dark"/"light" copy a pre-rendered static
+ * variant (icon-dark.png / icon-light.png) over icon.png. "colored"
+ * recolors the dark variant's chip at runtime (server-side GD) to whatever
+ * hex is picked via `iconColor` — not locked to brand pink.
  */
 export const ICON_STYLES = [
-    { id: 'colored', label: 'Colored', help: 'Pink chip, white glyph — the branded look.' },
+    { id: 'colored', label: 'Colored', help: 'Pick a chip color — white glyph on top.' },
     { id: 'dark', label: 'Dark', help: 'Black chip, white glyph — understated, works anywhere.' },
     { id: 'light', label: 'Light', help: 'White chip, dark glyph — for light theme panels.' },
 ];
@@ -64,6 +65,7 @@ export const ICON_STYLES = [
 export const DEFAULT_THEME = {
     mode: 'dark',
     iconStyle: 'colored',
+    iconColor: PINK,
     colors: {
         bodyBg: '#0b0f14',
         bodyColor: PINK,
@@ -160,6 +162,7 @@ export const isHex = (value) => typeof value === 'string' && HEX_RE.test(value.t
 export const cloneTheme = (theme) => ({
     mode: theme.mode,
     iconStyle: theme.iconStyle ?? DEFAULT_THEME.iconStyle,
+    iconColor: isHex(theme.iconColor) ? theme.iconColor : DEFAULT_THEME.iconColor,
     colors: { ...theme.colors },
     images: { ...DEFAULT_THEME.images, ...(theme.images ?? {}) },
 });
@@ -182,6 +185,9 @@ export const normalizeTheme = (raw) => {
     }
     if (ICON_STYLES.some((s) => s.id === raw.iconStyle)) {
         safe.iconStyle = raw.iconStyle;
+    }
+    if (isHex(raw.iconColor)) {
+        safe.iconColor = raw.iconColor.trim().toLowerCase();
     }
 
     const colors = raw.colors ?? {};

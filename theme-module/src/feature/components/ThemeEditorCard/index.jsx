@@ -46,6 +46,10 @@ const ThemeEditorCard = () => {
         setDraft((prev) => ({ ...prev, iconStyle }));
     };
 
+    const handleIconColor = (iconColor) => {
+        setDraft((prev) => ({ ...prev, iconColor }));
+    };
+
     const handleImageChange = (key, value) => {
         setDraft((prev) => ({ ...prev, images: { ...prev.images, [key]: value } }));
     };
@@ -113,7 +117,12 @@ const ThemeEditorCard = () => {
                 <div className={'small fw-semibold text-uppercase mb-2'} style={{ letterSpacing: '0.05em', color: 'rgba(255,255,255,0.5)' }}>
                     Module Icons
                 </div>
-                <IconStyleRow value={draft.iconStyle} onChange={handleIconStyle} />
+                <IconStyleRow
+                    value={draft.iconStyle}
+                    color={draft.iconColor}
+                    onChange={handleIconStyle}
+                    onColorChange={handleIconColor}
+                />
                 <div className={'small text-muted mt-1'}>
                     Applies on Save (sidebar icons aren&apos;t live-previewed).
                 </div>
