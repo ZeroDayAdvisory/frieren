@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: LGPL-3.0-only
  * More info at: https://github.com/xchwarze/frieren
  */
-import BettercapPage from './feature/containers/Bettercap';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <BettercapPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

@@ -1,8 +1,8 @@
 {
-  "title": "Bettercap",
+  "title": "Tools",
   "name": "bettercap",
-  "description": "Network recon/MITM framework (ARP spoofing, sniffing, HTTP/S proxying)",
-  "icon": "crosshair",
+  "description": "Bettercap, Kismet, MDK4, and the Wireshark remote-capture daemon — each a thin process-manager panel in one tabbed view",
+  "icon": "tool",
   "authors": [
     {
       "name": "ZeroDay Advisory™",
@@ -28,5 +28,5 @@
   "minPanelVersion": "1.4.1",
   "system": false,
   "forceSidebar": true,
-  "version": "1.0.3"
+  "version": "1.1.0"
 }
