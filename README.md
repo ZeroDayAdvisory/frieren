@@ -6,6 +6,22 @@
 
 Frieren is a framework for running security tools on OpenWrt routers and Single Board Computers (SBCs). It provides a web panel with WiFi management, installable modules, an integrated terminal, and a package manager. The stack is a PHP backend API with a React frontend, designed to be lightweight enough for embedded devices while remaining extensible through third-party modules.
 
+## This Fork
+
+This is a fork of [xchwarze/frieren](https://github.com/xchwarze/frieren). The
+**Frieren framework itself — everything described below — was created by DSR!
+(xchwarze)**; see [Authors](#authors) and [LICENSE.md](LICENSE.md) for the
+required copyright notice, which this fork keeps intact.
+
+On top of that framework, **ZeroDay Advisory™** built the following
+third-party modules (source under `*-module/` in this repo, packaged in
+[frieren-modules-release](https://github.com/ZeroDayAdvisory/frieren-modules-release)):
+`theme`, `captures`, `pcapview`, `syshealth`, `chanmap`, `macfilter`,
+`hsharvest`, `livecap`, `probetracker`, plus Frieren integrations for the
+third-party tools `kismet`, `bettercap`, `mdk4`, and `wireshark` (the
+underlying tools themselves are separate upstream projects, not ZeroDay
+Advisory's work — only the Frieren wrapper around them is).
+
 ## Features
 
 - **WiFi Management** — Create, edit, and remove wireless interfaces. Scan for networks, configure radios, edit raw UCI config.
