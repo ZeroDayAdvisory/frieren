@@ -36,7 +36,7 @@ const ImageUploadRow = ({ label, help, value, onChange }) => {
             const dataUri = await fileToDataUri(file);
             const res = await mutation.mutateAsync({ kind, dataUri });
             onChange(res?.url ?? null);
-            toast.success(`${label} uploaded.`);
+            toast.success(`${label} uploaded — click Save Theme to apply it.`);
         } catch {
             toast.error(`Failed to upload ${label.toLowerCase()}.`);
         } finally {

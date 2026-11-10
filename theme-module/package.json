@@ -1,6 +1,6 @@
 {
   "name": "theme",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "Customize colors and appearance for the entire Frieren panel",
   "license": "LGPL-3.0-only",
   "type": "module",

@@ -1,5 +1,5 @@
-import ProbeTrackerPage from './feature/containers/ProbeTracker';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <ProbeTrackerPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

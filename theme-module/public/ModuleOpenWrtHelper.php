@@ -324,6 +324,10 @@ class ModuleOpenWrtHelper
             $lines[] = "body{background-color: {$c['bodyBg']} !important; color: {$c['bodyColor']} !important; " .
                 "background-image: linear-gradient(rgba(0,0,0,{$dim}),rgba(0,0,0,{$dim})), url('{$bg}') !important; " .
                 "background-size: cover !important; background-attachment: fixed !important; background-position: center !important;}";
+            // .main-container is an opaque full-viewport wrapper sitting
+            // directly on top of <body> — without this the body background
+            // image is completely hidden behind it.
+            $lines[] = '.main-container{background-color: transparent !important;}';
         } else {
             $lines[] = "body{background-color: {$c['bodyBg']} !important; color: {$c['bodyColor']} !important;}";
         }

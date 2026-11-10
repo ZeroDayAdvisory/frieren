@@ -1,6 +1,6 @@
 {
   "name": "probetracker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Live feed of devices broadcasting probe requests — vendor-enriched, allow-list correlated",
   "license": "LGPL-3.0-only",
   "type": "module",

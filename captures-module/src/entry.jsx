@@ -1,5 +1,5 @@
-import CapturesPage from './feature/containers/Captures';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <CapturesPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

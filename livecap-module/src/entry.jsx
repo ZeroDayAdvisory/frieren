@@ -1,5 +1,5 @@
-import LiveCapPage from './feature/containers/LiveCap';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <LiveCapPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

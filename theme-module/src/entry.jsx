@@ -3,8 +3,8 @@
  * Module: Theme Customizer (ZeroDay Advisory)
  * SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
  */
-import ThemePage from './feature/containers/Theme';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <ThemePage />;
+const Loader = () => <Screen />;
 
 export default Loader;

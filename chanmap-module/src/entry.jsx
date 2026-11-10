@@ -1,5 +1,5 @@
-import ChanMapPage from './feature/containers/ChanMap';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <ChanMapPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

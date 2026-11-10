@@ -29,6 +29,10 @@ export const buildCss = (theme) => {
     if (img.background) {
         const overlay = Math.max(0, Math.min(1, img.bgOpacity ?? 0.15));
         lines.push(`body{background-color: ${c.bodyBg} !important; color: ${c.bodyColor} !important; background-image: linear-gradient(rgba(0,0,0,${1 - overlay}),rgba(0,0,0,${1 - overlay})), url('${img.background}') !important; background-size: cover !important; background-attachment: fixed !important; background-position: center !important;}`);
+        // .main-container is an opaque full-viewport wrapper that sits directly
+        // on top of <body> — without this, the body background image is
+        // completely hidden behind it no matter what's set above.
+        lines.push(`.main-container{background-color: transparent !important;}`);
     } else {
         lines.push(`body{background-color: ${c.bodyBg} !important; color: ${c.bodyColor} !important;}`);
     }

@@ -1,5 +1,5 @@
-import PcapViewPage from './feature/containers/PcapView';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <PcapViewPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

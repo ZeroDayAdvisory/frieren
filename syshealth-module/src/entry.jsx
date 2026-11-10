@@ -1,5 +1,5 @@
-import SysHealthPage from './feature/containers/SysHealth';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <SysHealthPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

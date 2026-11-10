@@ -3,8 +3,8 @@
  * Module: MAC Allow-List (ZeroDay Advisory)
  * SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
  */
-import MacFilterPage from './feature/containers/MacFilter';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <MacFilterPage />;
+const Loader = () => <Screen />;
 
 export default Loader;

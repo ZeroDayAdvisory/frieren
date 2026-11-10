@@ -1,5 +1,5 @@
-import HsharvestPage from './feature/containers/Hsharvest';
+import Screen from './feature/containers/Screen';
 
-const Loader = () => <HsharvestPage />;
+const Loader = () => <Screen />;
 
 export default Loader;
