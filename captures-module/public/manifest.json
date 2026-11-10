@@ -1,7 +1,7 @@
 {
   "title": "Captures",
   "name": "captures",
-  "description": "Browse per-device honeypot packet captures on the USB drive and see which devices are connected to the honeypot AP right now, with allow-list status and vendor enrichment",
+  "description": "Honeypot sessions, live monitor-radio packet feed, and on-device BPF filter/decode against saved captures — in one tabbed panel",
   "icon": "icon.png",
   "authors": [
     {
@@ -26,5 +26,5 @@
   "minPanelVersion": "1.4.1",
   "system": false,
   "forceSidebar": true,
-  "version": "1.0.5"
+  "version": "1.1.0"
 }
