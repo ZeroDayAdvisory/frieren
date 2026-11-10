@@ -1,7 +1,7 @@
 {
   "title": "Tools",
   "name": "bettercap",
-  "description": "Bettercap, Kismet, MDK4, and the Wireshark remote-capture daemon — each a thin process-manager panel in one tabbed view",
+  "description": "Bettercap, Kismet, MDK4, the Wireshark remote-capture daemon, and Probe Tracker — each a thin process-manager/data panel in one tabbed view",
   "icon": "tool",
   "authors": [
     {
@@ -28,5 +28,5 @@
   "minPanelVersion": "1.4.1",
   "system": false,
   "forceSidebar": true,
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

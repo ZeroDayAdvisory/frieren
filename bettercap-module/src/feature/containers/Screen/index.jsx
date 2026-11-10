@@ -8,6 +8,7 @@ import BettercapTab from '@module/feature/components/BettercapTab';
 import KismetTab from '@module/feature/components/KismetTab';
 import Mdk4Tab from '@module/feature/components/Mdk4Tab';
 import WiresharkTab from '@module/feature/components/WiresharkTab';
+import ProbeTrackerTab from '@module/feature/components/ProbeTrackerTab';
 
 const ToolsPage = () => (
     <div className={'my-5'}>
@@ -36,6 +37,11 @@ const ToolsPage = () => (
             <Tab eventKey={'wireshark'} title={'Wireshark'}>
                 <div className={'pt-4'}>
                     <WiresharkTab />
+                </div>
+            </Tab>
+            <Tab eventKey={'probetracker'} title={'Probe Tracker'}>
+                <div className={'pt-4'}>
+                    <ProbeTrackerTab />
                 </div>
             </Tab>
         </Tabs>
