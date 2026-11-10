@@ -198,9 +198,25 @@ The router's main CSS is at `/usr/share/frieren/assets/index.css` and is **gzip-
 
 **Current custom rules appended (hash-routing selectors):**
 ```css
+/* Pink names for all custom modules */
 #sidebar a[href='#/macfilter'], #sidebar a[href='#/kismet'],
 #sidebar a[href='#/bettercap'], #sidebar a[href='#/wireshark'],
-#sidebar a[href='#/mdk4'] { color: #ff2d78 !important; }
+#sidebar a[href='#/mdk4'], #sidebar a[href='#/hsharvest'],
+#sidebar a[href='#/probetracker'], #sidebar a[href='#/chanmap'],
+#sidebar a[href='#/livecap'], #sidebar a[href='#/captures'],
+#sidebar a[href='#/pcapview'], #sidebar a[href='#/syshealth'] { color: #ff2d78 !important; }
+/* same selectors + :hover → color:#ff2d78 !important; opacity:.85 */
+
+/* Sidebar vertical scroll so all modules stay reachable.
+   #sidebar is a flex column whose items were shrinking to fit (so overflow-y
+   never engaged); forcing children to keep natural height makes it scroll. */
+#sidebar { max-height: calc(100vh - 58px) !important; min-height: 0 !important;
+           overflow-y: auto !important; overflow-x: hidden !important;
+           flex-wrap: nowrap !important;
+           scrollbar-width: thin; scrollbar-color: rgba(255,45,120,.55) transparent; }
+#sidebar > * { flex: 0 0 auto !important; }
+#sidebar::-webkit-scrollbar { width: 6px; }
+#sidebar::-webkit-scrollbar-thumb { background: rgba(255,45,120,.55); border-radius: 3px; }
 ```
 
 ### CSRF / fetchPost Bug Class
