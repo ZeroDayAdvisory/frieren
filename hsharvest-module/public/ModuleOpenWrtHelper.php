@@ -8,13 +8,13 @@
 namespace frieren\modules\hsharvest;
 
 /**
- * Scans Aura's captures directory for pcap files, uses tshark to detect
+ * Scans Aura's handshakes directory for pcap files, uses tshark to detect
  * WPA 4-way handshakes (EAPOL) and PMKID frames, and surfaces ready-to-run
  * hashcat commands for each capture that has crackable material.
  */
 class ModuleOpenWrtHelper
 {
-    private const CAPTURES_DIR = '/mnt/usb/frieren/aura/captures';
+    private const CAPTURES_DIR = '/mnt/usb/frieren/aura/handshakes';
     private const HASHES_DIR   = '/tmp/frieren-hsharvest';
     private const OUI_DB       = '/usr/share/frieren/modules/kismet/conf/kismet_manuf.txt.gz';
 

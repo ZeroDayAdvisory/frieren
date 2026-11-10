@@ -26,12 +26,14 @@ const MitmToggleCard = () => {
 
     const active = data?.active ?? false;
 
+    const OFF_GREY = '#9ca3af';
+
     const handleToggle = async () => {
         const next = !active;
         await setMitm.mutateAsync(next);
         toast.success(next
-            ? 'MITM intercept enabled — next allow-listed connection will be intercepted'
-            : 'MITM intercept disabled — allow-listed devices will get passive capture only'
+            ? 'Honeypot intercept turned ON — allow-listed devices will be MITM intercepted'
+            : 'Honeypot intercept turned OFF — passive capture only, no MITM'
         );
     };
 
@@ -44,23 +46,34 @@ const MitmToggleCard = () => {
         >
             <div className={'d-flex align-items-center justify-content-between gap-3'}>
                 <div>
-                    <div className={'fw-semibold'} style={{ color: active ? PINK : undefined }}>
-                        {active ? 'MITM Active' : 'Passive Capture Only'}
+                    <div className={'fw-bold'} style={{ fontSize: '1.1rem' }}>
+                        Intercept is{' '}
+                        <span style={{ color: active ? PINK : OFF_GREY }}>
+                            {active ? 'ON' : 'OFF'}
+                        </span>
                     </div>
                     <div className={'small text-muted mt-1'}>
                         {active
-                            ? 'Allow-listed devices will be ARP-spoofed, HTTPS-proxied, and redirected to the cert install page.'
-                            : 'Allow-listed devices get normal internet. tcpdump still captures all their traffic.'}
+                            ? 'ON — allow-listed devices are MITM intercepted (ARP spoof + HTTPS proxy + cert-install redirect).'
+                            : 'OFF — no MITM. Devices get normal internet; passive pcap / DNS / SNI capture still runs.'}
                     </div>
                 </div>
-                <Form.Check
-                    type={'switch'}
-                    id={'mitm-toggle'}
-                    checked={active}
-                    onChange={handleToggle}
-                    disabled={setMitm.isPending || isLoading}
-                    style={{ transform: 'scale(1.4)', transformOrigin: 'right center', flexShrink: 0 }}
-                />
+                <div className={'d-flex flex-column align-items-center'} style={{ flexShrink: 0 }}>
+                    <Form.Check
+                        type={'switch'}
+                        id={'mitm-toggle'}
+                        checked={active}
+                        onChange={handleToggle}
+                        disabled={setMitm.isPending || isLoading}
+                        style={{ transform: 'scale(1.5)', transformOrigin: 'center', marginLeft: '0.5rem' }}
+                    />
+                    <div
+                        className={'fw-bold mt-2'}
+                        style={{ fontSize: '0.8rem', letterSpacing: '0.05em', color: active ? PINK : OFF_GREY }}
+                    >
+                        {active ? 'ON' : 'OFF'}
+                    </div>
+                </div>
             </div>
         </PanelCard>
     );

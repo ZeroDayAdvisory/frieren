@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="black"/>
+  <!-- Magnifier -->
+  <circle cx="52" cy="52" r="30" fill="none" stroke="white" stroke-width="12"/>
+  <rect x="78" y="78" width="16" height="40" rx="8" fill="white" transform="rotate(45 86 98)"/>
+  <!-- Packet inside lens -->
+  <rect x="36" y="46" width="32" height="12" rx="3" fill="white"/>
+</svg>

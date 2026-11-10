@@ -1,0 +1,30 @@
+{
+  "title": "Theme Customizer",
+  "name": "theme",
+  "description": "Fully customize the Frieren WebUI's color scheme — live preview, presets, and a saved theme that applies across every page and module",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "theme",
+    "customization",
+    "colors",
+    "ui",
+    "css"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/theme-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/theme-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.1.0"
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="black"/>
+  <!-- Heartbeat pulse line -->
+  <path fill="none" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"
+    d="M12 70h22l10-26 16 50 12-38 8 14h36"/>
+</svg>
