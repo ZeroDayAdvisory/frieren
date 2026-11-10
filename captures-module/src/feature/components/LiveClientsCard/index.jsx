@@ -37,6 +37,7 @@ const LiveClientsCard = ({ data, isFetching, refetch }) => {
                     <thead>
                         <tr style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.72rem', textTransform: 'uppercase' }}>
                             <th>Device</th>
+                            <th>IP</th>
                             <th>Signal</th>
                             <th>Connected</th>
                             <th>RX / TX</th>
@@ -49,6 +50,9 @@ const LiveClientsCard = ({ data, isFetching, refetch }) => {
                                 <td>
                                     <div style={{ color: BLUE, fontFamily: 'monospace' }}>{c.mac}</div>
                                     <div className={'text-muted'} style={{ fontSize: '0.72rem' }}>{c.vendor}</div>
+                                </td>
+                                <td style={{ color: BLUE, fontFamily: 'monospace', fontSize: '0.8rem' }}>
+                                    {c.ip ?? '—'}
                                 </td>
                                 <td style={{ color: signalColor(c.signal) }}>
                                     {c.signal !== null ? `${c.signal} dBm` : '—'}

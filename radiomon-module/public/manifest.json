@@ -1,0 +1,30 @@
+{
+  "title": "System Monitor",
+  "name": "radiomon",
+  "description": "Live radios, honeypot intercept, and rig health in one panel — frame rate, channel, lifecycle state, scan/handshake/campaign status, MITM toggle, disk/temp/memory, and daemon status",
+  "icon": "icon.png",
+  "authors": [
+    {
+      "name": "ZeroDay Advisory™",
+      "email": "nullbytesX00@icloud.com"
+    }
+  ],
+  "keywords": [
+    "radio",
+    "monitor",
+    "status",
+    "frames",
+    "aura"
+  ],
+  "repository": "https://github.com/ZeroDayAdvisory/frieren/tree/master/radiomon-module",
+  "documentation": "https://github.com/ZeroDayAdvisory/frieren/tree/master/radiomon-module#readme",
+  "license": "LGPL-3.0-only",
+  "guestType": [
+    "OpenWrt"
+  ],
+  "dependencies": [],
+  "minPanelVersion": "1.4.1",
+  "system": false,
+  "forceSidebar": true,
+  "version": "1.0.0"
+}

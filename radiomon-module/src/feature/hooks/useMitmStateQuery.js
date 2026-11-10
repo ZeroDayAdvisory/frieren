@@ -1,6 +1,6 @@
 /*
  * Project: Frieren Framework
- * Module: MAC Allow-List (ZeroDay Advisory)
+ * Module: Radio Monitor (ZeroDay Advisory)
  * SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
  */
 import useAuthenticatedQuery from '@src/hooks/useAuthenticatedQuery.js';

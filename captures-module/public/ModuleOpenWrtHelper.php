@@ -21,6 +21,7 @@ class ModuleOpenWrtHelper
     private const OUI_DB       = '/usr/share/frieren/modules/kismet/conf/kismet_manuf.txt.gz';
     private const AP_IFACE     = 'phy0-ap0';
     private const CLI          = 'frieren-aura-cli';
+    private const LEASE_FILE   = '/tmp/dhcp_evil.leases';
 
     // -------------------------------------------------------------------------
     // Public API
@@ -175,6 +176,7 @@ class ModuleOpenWrtHelper
                 $mac = strtoupper($m[1]);
                 $cur = [
                     'mac'          => $mac,
+                    'ip'           => self::resolveIp($mac),
                     'vendor'       => self::resolveVendor($mac),
                     'allowed'      => in_array($mac, $allowed, true),
                     'capturing'    => self::isCapturing($mac),
@@ -275,6 +277,30 @@ class ModuleOpenWrtHelper
         $db = self::loadOuiDatabase();
         $oui = strtoupper(substr($mac, 0, 8));
         return $db[$oui] ?? 'Unknown vendor';
+    }
+
+    /**
+     * Looks up the honeypot DHCP lease for a MAC (dnsmasq's leasefile for
+     * the 'evil' interface — the only network we're actually the gateway
+     * for, so the only place a MAC->IP mapping legitimately exists).
+     *
+     * @return string|null e.g. "10.13.37.245", or null if not leased.
+     */
+    private static function resolveIp($mac)
+    {
+        $lines = @file(self::LEASE_FILE, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        if ($lines === false) {
+            return null;
+        }
+        $macLower = strtolower($mac);
+        foreach ($lines as $line) {
+            $parts = preg_split('/\s+/', trim($line));
+            // dnsmasq lease format: expiry mac ip hostname clientid
+            if (count($parts) >= 3 && strtolower($parts[1]) === $macLower) {
+                return $parts[2];
+            }
+        }
+        return null;
     }
 
     /**

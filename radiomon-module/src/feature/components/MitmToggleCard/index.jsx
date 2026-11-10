@@ -1,6 +1,6 @@
 /*
  * Project: Frieren Framework
- * Module: MAC Allow-List (ZeroDay Advisory)
+ * Module: Radio Monitor (ZeroDay Advisory)
  * SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
  */
 import { toast } from 'react-toastify';
@@ -8,7 +8,7 @@ import { Form } from 'react-bootstrap';
 import PanelCard from '@src/components/PanelCard';
 import useMitmStateQuery from '@module/feature/hooks/useMitmStateQuery';
 import useSetMitmStateMutation from '@module/feature/hooks/useSetMitmStateMutation';
-import { PINK } from '@module/colors';
+import { PINK, TRANSPARENT_CARD_STYLE } from '@module/colors';
 
 /**
  * Toggle card for the honeypot MITM intercept mode.
@@ -43,6 +43,7 @@ const MitmToggleCard = () => {
             icon={'shield'}
             refetch={refetch}
             isFetching={isLoading || isRefetching}
+            style={TRANSPARENT_CARD_STYLE}
         >
             <div className={'d-flex align-items-center justify-content-between gap-3'}>
                 <div>
